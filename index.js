@@ -197,16 +197,16 @@ function eduPart() {
 eduPart();
 
 function exp() {
-  gsap.to(".exp h1", {
-    transform: "translate(-60%)",
+  gsap.to(".exp p", {
+    transform: "translate(-100%)",
     scrollTrigger: {
       trigger: ".exp",
       scroller: "body",
       // markers: true,
-      start: "top 0%",
-      end: " bottom -5%",
-      pin: true,
-      scrub: 5,
+      start: "top 40%",
+      end: " top -100%",
+      // pin: true,
+      scrub: 10,
     },
   });
 }
