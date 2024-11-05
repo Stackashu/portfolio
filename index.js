@@ -13,14 +13,14 @@ function revealToSpan() {
     elem.appendChild(parent);
   });
 }
-
+// inital position of first page
 function animateHomeParts() {
   gsap.set("nav a", {
     y: "-100%",
     opacity: 0,
   });
   gsap.set(" .home h1 ", {
-    y: "100%",
+    y: "160%",
   });
   gsap.set(" .timings h5 ", {
     y: "250%",
@@ -31,6 +31,7 @@ function animateHomeParts() {
 }
 animateHomeParts();
 revealToSpan();
+// loader page
 function animatethings() {
   let tl = gsap.timeline();
 
@@ -74,6 +75,7 @@ function animatethings() {
 }
 animatethings();
 animateHomeParts();
+// final position of first page
 function playAnimatHomeParts() {
   let t1 = gsap.timeline();
   t1.to("nav a", {
@@ -105,44 +107,9 @@ function playAnimatHomeParts() {
     });
 }
 
-const btn1 = document.querySelector(".edu");
-const btn2 = document.querySelector(".ski");
-const btn3 = document.querySelector(".ext");
-const box1 = document.querySelector(".rlbox1");
-const box2 = document.querySelector(".rlbox2");
-const box3 = document.querySelector(".rlbox3");
 
-btn1.addEventListener("click", () => {
-  // hiding the dv repective to the boxes
-  box1.classList.remove("hidden");
-  box2.classList.add("hidden");
-  box3.classList.add("hidden");
-  // button green border
-  btn1.classList.add("greenborder");
-  btn2.classList.remove("greenborder");
-  btn3.classList.remove("greenborder");
-});
 
-btn2.addEventListener("click", () => {
-  // hiding the dv repective to the boxes
-  box1.classList.add("hidden");
-  box2.classList.remove("hidden");
-  box3.classList.add("hidden");
-  // button green border
-  btn1.classList.remove("greenborder");
-  btn2.classList.add("greenborder");
-  btn3.classList.remove("greenborder");
-});
-btn3.addEventListener("click", () => {
-  // hiding the dv repective to the boxes
-  box1.classList.add("hidden");
-  box2.classList.add("hidden");
-  box3.classList.remove("hidden");
-  // button green border
-  btn1.classList.remove("greenborder");
-  btn2.classList.remove("greenborder");
-  btn3.classList.add("greenborder");
-});
+
 function rotateText() {
   // web text movement
   const boxin = document.querySelector(".home");
@@ -161,50 +128,20 @@ function rotateText() {
       ) / 30;
 
     text.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+  
   });
 }
 rotateText();
-//  to check
-// function rotatingLogo() {
-//   const logobox = document.querySelectorAll(".skill");
-//   const logo = document.querySelector("#logo");
-//   console.log(logobox);
-//   logobox.forEach((e) => {
-//     e.addEventListener("mouseover", (e) => {
-//       e.style.display = "none";
-//     });
-//     e.addEventListener("mouseout", () => {
-//       logo.style.display = "block";
-//     });
-//   });
-// }
-// rotatingLogo();
-
-function eduPart() {
-  gsap.from(".slide", {
-    transform: "translate(150%)",
-    scrollTrigger: {
-      trigger: ".education",
-      scroller: "body",
-      //  markers: true,
-      start: "top 70%",
-      end: " top 40%",
-      //  pin:true,
-      scrub: 5,
-    },
-  });
-}
-eduPart();
 
 function exp() {
-  gsap.to(".exp p", {
-    transform: "translate(-100%)",
+  gsap.to(".about h1", {
+    transform: "translate(-40%)",
     scrollTrigger: {
-      trigger: ".exp",
+      trigger: ".about",
       scroller: "body",
       // markers: true,
-      start: "top 40%",
-      end: " top -100%",
+      start: "top 10%",
+      end: " top -90%",
       // pin: true,
       scrub: 10,
     },
@@ -251,3 +188,83 @@ submit.addEventListener("click", function(event) {
     alert("Please fill in all fields.");
   }
 });
+
+function skills(){
+  // for skills word
+  gsap.from(".study h1", {
+    opacity: 0,
+    y:-100,
+    // duration:.5,
+    scrollTrigger: {
+      trigger: ".study",
+      scroller: "body",
+      // markers: true,
+      start: "top 80%",
+      end: " bottom -80%",
+      // pin: true,
+      scrub: 10,
+    },
+  });
+  // for education and learing word
+  gsap.from(".education p", {
+    opacity: 0,
+    y:-50,
+    // duration:.5,
+    scrollTrigger: {
+      trigger: ".education",
+      scroller: "body",
+      // markers: true,
+      start: "top 80%",
+      end: " bottom -80%",
+      // pin: true,
+      scrub: 10,
+    },
+  });
+  // for the timeline
+  gsap.from(".education #e1", {
+    opacity: 0.4,
+    y:-20,
+    // duration:.5,
+    scrollTrigger: {
+      trigger: ".education",
+      scroller: "body",
+      // markers: true,
+      start: "top 50%",
+      end: " bottom 10%",
+      // pin: true,
+      scrub: 10,
+    },
+  });
+  gsap.from(".education #e2", {
+    opacity: 0.4,
+    y:-20,
+    // duration:.5,
+    delay:1,
+    scrollTrigger: {
+      trigger: ".education",
+      scroller: "body",
+      // markers: true,
+      start: "top 20%",
+      end: " bottom -80%",
+      // pin: true,
+      scrub: 10,
+    },
+  });
+  gsap.from(".education #e3", {
+    opacity: 0.4,
+    y:-30,
+    delay:1,
+    // duration:.5,
+    scrollTrigger: {
+      trigger: ".education",
+      scroller: "body",
+      // markers: true,
+      start: "top 10%",
+      end: " bottom -80%",
+      // pin: true,
+      scrub: 10,
+    },
+  });
+ 
+}
+skills()
