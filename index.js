@@ -223,8 +223,8 @@ function skills(){
   // for the timeline
   gsap.from(".education #e1", {
     opacity: 0.4,
-    y:-20,
-    // duration:.5,
+    x:-20,
+    duration:.5,
     scrollTrigger: {
       trigger: ".education",
       scroller: "body",
@@ -237,8 +237,8 @@ function skills(){
   });
   gsap.from(".education #e2", {
     opacity: 0.4,
-    y:-20,
-    // duration:.5,
+    x:20,
+    duration:.5,
     delay:1,
     scrollTrigger: {
       trigger: ".education",
@@ -252,9 +252,9 @@ function skills(){
   });
   gsap.from(".education #e3", {
     opacity: 0.4,
-    y:-30,
+    x:-20,
     delay:1,
-    // duration:.5,
+    duration:.5,
     scrollTrigger: {
       trigger: ".education",
       scroller: "body",
